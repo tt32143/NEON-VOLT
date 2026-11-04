@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="mk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b14" />
+    <title>NEON VOLT — Premium Electric Showroom</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="topbar">
+        <a class="brand" href="#"><span class="brand-mark">N</span><span>NEON<span class="brand-light">VOLT</span></span></a>
+        <div class="topbar-center"><span class="live-dot"></span> VIRTUAL EXPERIENCE <span class="topbar-divider">/</span> CONCEPT 01</div>
+        <button id="reset-camera" class="ghost-button">RESET VIEW ↗</button>
+      </div>
+
+      <main class="layout">
+        <aside class="panel left-panel">
+          <div class="eyebrow">VEHICLE CONFIGURATION</div>
+          <h1>Shape your<br><em>next move.</em></h1>
+          <p class="intro">An electric performance concept, designed for the future.</p>
+
+          <section class="control-section">
+            <div class="section-heading"><span>01 / PAINT FINISH</span><span id="paint-name">VOLT RED</span></div>
+            <div class="swatches">
+              <button class="swatch active" data-color="#e52d45" aria-label="Volt red" aria-pressed="true" style="--swatch:#e52d45"></button>
+              <button class="swatch" data-color="#1769d2" aria-label="Electric blue" aria-pressed="false" style="--swatch:#1769d2"></button>
+              <button class="swatch" data-color="#d8dde5" aria-label="Arctic silver" aria-pressed="false" style="--swatch:#d8dde5"></button>
+              <button class="swatch" data-color="#171c27" aria-label="Obsidian black" aria-pressed="false" style="--swatch:#171c27"></button>
+            </div>
+          </section>
+
+          <section class="control-section">
+            <div class="section-heading"><span>02 / LIGHTING</span><span>STUDIO</span></div>
+            <div class="segmented">
+              <button class="mode active" data-mode="studio" aria-pressed="true">STUDIO</button>
+              <button class="mode" data-mode="pulse" aria-pressed="false">PULSE</button>
+              <button class="mode" data-mode="night" aria-pressed="false">NIGHT</button>
+            </div>
+          </section>
+
+          <section class="control-section">
+            <div class="section-heading"><span>03 / DETAIL</span><span>INTERACTIVE</span></div>
+            <p class="hint">Move your pointer over the vehicle, then click a highlighted part to inspect it.</p>
+            <div id="part-info" class="part-info">
+              <span class="info-kicker">SELECTED COMPONENT</span>
+              <strong id="part-title">SELECT A COMPONENT</strong>
+              <span id="part-description">Move over the vehicle and click a part to inspect it.</span>
+            </div>
+          </section>
+
+          <div class="panel-foot"><span>DESIGNED FOR TOMORROW</span><span>01 — 04</span></div>
+        </aside>
+
+        <section class="viewport" aria-label="Interactive 3D electric car showroom">
+          <div class="scene-label"><span class="live-dot"></span> LIVE 3D RENDER <span class="scene-label-line"></span> 60 FPS TARGET</div>
+          <div class="vehicle-tag"><strong>NV–01</strong><span>ALL-ELECTRIC GT</span></div>
+          <div class="viewport-hint">DRAG TO ORBIT&nbsp;&nbsp;·&nbsp;&nbsp;SCROLL TO ZOOM</div>
+          <nav class="camera-presets" aria-label="Camera viewpoints">
+            <button class="camera-view active" data-view="hero" aria-label="Hero three-quarter view" aria-pressed="true" title="Hero view (1)">01</button>
+            <button class="camera-view" data-view="front" aria-label="Front view" aria-pressed="false" title="Front view (2)">02</button>
+            <button class="camera-view" data-view="side" aria-label="Side view" aria-pressed="false" title="Side view (3)">03</button>
+            <button class="camera-view" data-view="top" aria-label="Top view" aria-pressed="false" title="Top view (4)">04</button>
+          </nav>
+          <div id="loading" class="loading">INITIALIZING SHOWROOM<span>...</span></div>
+          <div id="tooltip" class="tooltip"></div>
+        </section>
+
+        <aside class="panel right-panel">
+          <div class="eyebrow">NV–01 / SPECIFICATION</div>
+          <div class="model-title">VOLT<span> GT</span></div>
+          <p class="model-subtitle">ELECTRIC GRAND TOURER</p>
+          <div class="spec-grid">
+            <div><strong>2.4<span>s</span></strong><small>0–100 KM/H*</small></div>
+            <div><strong>680</strong><small>PEAK HP*</small></div>
+            <div><strong>620<span>km</span></strong><small>RANGE*</small></div>
+            <div><strong>800<span>V</span></strong><small>ARCHITECTURE*</small></div>
+          </div>
+          <div class="right-divider"></div>
+          <div class="eyebrow">SURFACE MATERIALS</div>
+          <div class="material-row"><span class="material-chip paint"></span><span><b>Liquid metal</b><small>Paint / metallic clearcoat</small></span></div>
+          <div class="material-row"><span class="material-chip glass"></span><span><b>Smoked crystal</b><small>Glazing / low roughness</small></span></div>
+          <div class="material-row"><span class="material-chip rubber"></span><span><b>Performance rubber</b><small>Tires / matte finish</small></span></div>
+          <div class="right-divider"></div>
+          <div class="eyebrow">SHOWROOM CONTROLS</div>
+          <label class="toggle-row"><span>Auto rotate platform</span><input id="auto-rotate" type="checkbox" checked><i></i></label>
+          <label class="toggle-row"><span>Show technical grid</span><input id="show-grid" type="checkbox" checked><i></i></label>
+          <button id="focus-car" class="primary-button">FOCUS VEHICLE <span>↗</span></button>
+          <p class="disclaimer">*Concept specifications for demonstration only.</p>
+        </aside>
+      </main>
+      <footer class="footer"><span>NEON VOLT <b>®</b> — DIGITAL SHOWROOM CONCEPT</span><span>THREE.JS / WEBGL EXPERIENCE</span><span>BUILD 001.26</span></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
