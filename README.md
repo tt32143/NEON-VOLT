@@ -1,83 +1,257 @@
-# NEON VOLT — Premium 3D Car Showroom
+# NEON VOLT
+### Premium 3D Electric Car Showroom
 
-Interactive Three.js concept showroom for an electric grand tourer. The vehicle is built procedurally from Three.js geometry so the project runs without downloading third-party 3D assets.
+An interactive 3D electric grand tourer configurator built with **Three.js**, **JavaScript**, and **Vite** as a Computer Graphics university project.
 
-## Requirements
-- Node.js 20.19+ (or a compatible current LTS release)
+NEON VOLT presents the fictional NV-01 Electric GT inside a futuristic digital showroom. Users can explore the vehicle, change its paint finish, switch lighting environments, inspect individual components, and navigate between predefined camera views.
+
+> **Project type:** University Final Project – Computer Graphics  
+> **Vehicle concept:** NV-01 / VOLT GT  
+> **Experience:** Interactive 3D Web Application
+
+---
+
+## Features
+
+- **Interactive 3D vehicle:** Procedurally constructed electric GT concept.
+- **Paint configurator:** Change the vehicle's body color.
+- **Lighting environments:** Studio, Pulse, and Night modes.
+- **Camera presets:** Hero, Front, Side, and Top views.
+- **Component inspection:** Hover over and select vehicle components.
+- **EV components:** Visual battery enclosure and cooling plate.
+- **Animated showroom:** Rotating display platform and animated shader ring.
+- **PBR materials:** Metallic paint, glass, rubber, and metal surfaces.
+- **Responsive interface:** Showroom interface adapts to different viewport sizes.
+- **Accessibility:** Keyboard focus indicators and reduced-motion support.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| JavaScript (ES Modules) | Application logic |
+| Three.js | 3D graphics and rendering |
+| Vite | Development server and production build |
+| GLSL | Custom vertex and fragment shaders |
+| HTML5 / CSS3 | Interface and layout |
+| WebGL | Hardware-accelerated graphics |
+
+## Getting Started
+
+### Requirements
+
+- Node.js 20.19+ or a compatible current LTS release
 - npm
-- A browser with WebGL support
+- A modern browser with WebGL support
 
-## Run locally
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/tt32143/NEON-VOLT.git
+cd NEON-VOLT
+```
+
+Install dependencies:
+
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
-Open the local URL printed by Vite (normally `http://localhost:5173`).
 
-Production build:
+Open the local URL displayed by Vite, normally:
+
+```text
+http://localhost:5173/
+```
+
+### Production Build
+
+Create an optimized production build:
+
 ```bash
 npm run build
+```
+
+Preview the production build locally:
+
+```bash
 npm run preview
 ```
 
-## Controls
-- Drag: orbit camera
-- Scroll: zoom
-- Camera presets 01–04: hero, front, side and top views (keyboard shortcuts 1–4) with eased transitions; press Escape to clear a selected component
-- Click a paint swatch: change body color
-- Select STUDIO / PULSE / NIGHT: change lighting
-- Hover and click car parts: inspect components, including the EV battery pack and cooling plate
-- Auto rotate platform: toggle the display platform
-- Show technical grid: toggle floor grid
+### Project Verification
 
-## Where the seven required techniques are implemented
-1. **Lighting** — `src/lighting.js`: AmbientLight, DirectionalLight and SpotLight, plus red rim and cool fill PointLights; shadow casting and receiving are enabled.
-2. **Color management** — `src/main.js`: `renderer.outputColorSpace = THREE.SRGBColorSpace`, ACES filmic tone mapping and exposure. `src/materials.js` marks the generated color texture as sRGB.
-3. **Textures** — `src/materials.js`: procedural canvas color map and normal map on the showroom floor, with repeat wrapping and mipmap filtering. The floor geometry uses standard UVs.
-4. **PBR** — `src/materials.js`: physically based body, glass, tire and metal materials; the body uses a subtle procedural tangent-space normal map for paint micro-surface detail. `src/lighting.js`: PMREM environment generated from `RoomEnvironment`.
-5. **Shader** — `src/shaders/showroom.vert` deforms the energy-ring vertices; `src/shaders/showroom.frag` animates color using uniforms and a varying. `src/showroom.js` supplies the uniforms and ShaderMaterial.
-6. **Animation** — `src/animation.js`: delta-time update, sinusoidal/eased platform motion and animated light. Delta is clamped to avoid large jumps after pauses.
-7. **Interaction** — `src/interaction.js`: Raycaster hover/click selection and visible highlight. `OrbitControls` in `src/main.js` controls the camera.
+Run the project's static verification script:
 
-## Project structure
-- `src/main.js` — application entry point, UI wiring and eased camera presets
-- `src/style.css` — responsive showroom interface styles
-- `src/car.js` — procedural electric GT body shell, panoramic canopy, multi-spoke wheels, brake discs, wheel-arch trim, brake calipers and fasteners, underfloor EV battery pack, cooling plate, hood creases, flush handles, side outlets and lighting details
-- `src/showroom.js` — showroom floor, platform and shader ring
-- `src/lighting.js` — lights and PMREM environment
-- `src/materials.js` — PBR materials and procedural textures
-- `src/interaction.js` — Raycaster selection
-- `src/animation.js` — time-based animation
-- `src/shaders/` — GLSL vertex and fragment shaders
-
-## Defense preparation
-See `docs/ODBRANA_MK.md` for a five-minute demo outline and sample technical questions. See `docs/TECHNICAL_AUDIT_MK.md` for a requirement-by-requirement implementation audit, `docs/FINAL_TEST_CHECKLIST_MK.md` for the final browser/build test checklist, and `docs/USER_ACCEPTANCE_TEST_MK.md` for the browser checks reported by the student.
-
-## Assets and licenses
-No third-party model or texture assets are included. The vehicle and floor textures are generated in code. Three.js is an external dependency and retains its own license; see the package metadata and the official Three.js license.
-
-## Current limitations / next development tasks
-- The car is a stylized procedural concept model, not a production-quality imported GLB model.
-- Vehicle specifications are fictional demonstration values.
-- The paint Color Map and Normal Map are procedural and intentionally subtle; they are not scanned automotive paint textures. The floor also uses a procedural non-flat normal map.
-- The battery enclosure and cooling plate are visual concept components, not an engineering-accurate battery design.
-- The car remains an original stylized concept mesh, not a photorealistic production vehicle.
-- Next: verify the final result on the university lab computer and tune reflections/shadows to its GPU.
-
-## Accessibility and graphics fallback
-- The showroom respects the operating system's `prefers-reduced-motion` setting by disabling automatic platform rotation and animated camera transitions.
-- Rendering pixel ratio is capped at 1.75 to balance sharpness and GPU load on high-density displays.
-- The animation loop pauses while the browser tab is hidden and resumes with a fresh delta-time sample when visible again.
-- Paint, lighting and camera preset buttons expose their selected state through `aria-pressed`; keyboard focus indicators are visible.
-- If WebGL initialization fails, the viewport displays a hardware-acceleration/browser guidance message.
-- If the WebGL context is lost while running, the viewport displays a reload notice.
-
-## Verification status
-The student reported successful manual Chrome checks for the main configurator controls, lighting modes, shadows/reflections, window resizing, and a short stability run. See `docs/USER_ACCEPTANCE_TEST_MK.md` for the recorded scope. A production build remains unconfirmed until `npm run build` succeeds on the submission machine.
-
-## Static verification
-Run the project's repeatable source/layout checks with:
 ```bash
 npm run verify
 ```
-This checks required project files, relative local imports and source markers for the seven required techniques. It does **not** replace `npm run build` or a real Chrome/WebGL test.
+
+## User Controls
+
+| Input | Action |
+|---|---|
+| Mouse drag | Orbit around the vehicle |
+| Mouse scroll | Zoom in and out |
+| Camera button 01 | Hero view |
+| Camera button 02 | Front view |
+| Camera button 03 | Side view |
+| Camera button 04 | Top view |
+| Keyboard 1–4 | Activate camera presets |
+| Escape | Clear component selection |
+| Paint swatches | Change vehicle paint |
+| Studio / Pulse / Night | Change lighting environment |
+| Auto rotate platform | Enable or disable platform rotation |
+| Show technical grid | Toggle the showroom grid |
+| Focus Vehicle | Focus the camera on the vehicle |
+
+## Computer Graphics Techniques
+
+The project demonstrates the seven techniques required by the course assignment.
+
+### 1. Lighting and Shadows
+
+Implemented in `src/lighting.js`.
+
+- Ambient lighting.
+- Directional lighting.
+- Spot lighting.
+- Point lights for accent and fill illumination.
+- Shadow casting and receiving.
+- Environment lighting using PMREM and `RoomEnvironment`.
+
+### 2. Color Management
+
+Implemented in `src/main.js` and `src/materials.js`.
+
+- sRGB output color space.
+- ACES Filmic Tone Mapping.
+- Renderer exposure configuration.
+- sRGB color texture configuration.
+
+### 3. Textures and UV Mapping
+
+Implemented in `src/materials.js`.
+
+- Procedural Color Map generated using CanvasTexture.
+- Procedural Normal Map.
+- UV coordinates on geometry.
+- Texture repeat wrapping and filtering.
+- sRGB color texture configuration.
+
+### 4. Physically Based Rendering (PBR)
+
+Implemented in `src/materials.js` and `src/lighting.js`.
+
+- MeshPhysicalMaterial and MeshStandardMaterial.
+- Metalness and roughness configuration.
+- Clear-coated automotive paint.
+- Glass, rubber, and metallic surfaces.
+- Environment reflections using a PMREM-generated environment.
+
+### 5. Custom ShaderMaterial
+
+Implemented in:
+
+- `src/shaders/showroom.vert`
+- `src/shaders/showroom.frag`
+- `src/showroom.js`
+
+The custom shader demonstrates:
+
+- Vertex deformation.
+- Animated color transitions.
+- Uniform variables.
+- Varying data passed between vertex and fragment shaders.
+
+### 6. Animation
+
+Implemented in `src/animation.js`.
+
+- Delta-time-based animation.
+- Smooth and eased motion.
+- Animated showroom lighting.
+- Rotating display platform.
+- Animation behavior designed to avoid large time jumps after pauses.
+
+### 7. Interaction and Raycasting
+
+Implemented in `src/interaction.js`.
+
+- Three.js Raycaster.
+- Mouse hover detection.
+- Object picking and selection.
+- Component highlighting.
+- Component information display.
+- Selection clearing and click-versus-drag handling.
+
+## Project Structure
+
+```text
+NEON-VOLT/
+├── docs/
+│   ├── FINAL_TEST_CHECKLIST_MK.md
+│   ├── ODBRANA_MK.md
+│   ├── TECHNICAL_AUDIT_MK.md
+│   └── USER_ACCEPTANCE_TEST_MK.md
+├── scripts/
+│   └── verify-project.mjs
+├── src/
+│   ├── shaders/
+│   │   ├── showroom.frag
+│   │   └── showroom.vert
+│   ├── animation.js
+│   ├── car.js
+│   ├── interaction.js
+│   ├── lighting.js
+│   ├── main.js
+│   ├── materials.js
+│   ├── showroom.js
+│   └── style.css
+├── .gitignore
+├── AI-USE.md
+├── index.html
+├── package.json
+└── package-lock.json
+```
+
+## Documentation
+
+Additional project documentation is available in the `docs/` directory:
+
+- `ODBRANA_MK.md` – Five-minute defense guide and technical questions.
+- `TECHNICAL_AUDIT_MK.md` – Implementation audit against the seven course requirements.
+- `FINAL_TEST_CHECKLIST_MK.md` – Final testing checklist.
+- `USER_ACCEPTANCE_TEST_MK.md` – Manual browser testing record.
+
+AI assistance is documented transparently in `AI-USE.md`.
+
+## Design and Technical Limitations
+
+- The NV-01 is an original procedural concept model, not a photorealistic production vehicle.
+- Vehicle performance specifications are fictional demonstration values.
+- Battery and cooling components are visual representations, not engineering-accurate designs.
+- Paint and floor textures are generated procedurally.
+- Visual quality and performance may vary depending on the browser and graphics hardware.
+
+## Assets and Licensing
+
+No external vehicle models or third-party texture assets are included.
+
+The vehicle geometry and procedural textures are generated within the project.
+
+Three.js is used as an external dependency under its applicable license. Refer to the official [Three.js repository](https://github.com/mrdoob/three.js) for licensing information.
+
+## Academic Project
+
+**NEON VOLT – Premium 3D Electric Car Showroom**
+
+Developed as a Computer Graphics university final project.
+
+**GitHub Repository:**  
+https://github.com/tt32143/NEON-VOLT
