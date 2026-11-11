@@ -138,23 +138,23 @@ The following checks were performed by the student during local testing:
 
 **1. What was the most important technical concept you learned?**
 
-The most important technical concept that I have learned was the creation of an interactive 3D environment using Three.js. I have learned the principles behind geometry, materials, lighting, camera, and animation.
+The most important concept I learned was how to create an interactive 3D environment with Three.js. Through this project, I became more familiar with how geometry, materials, lighting, cameras, and animation work together to create a complete 3D scene.
 
 **2. Which part of the implementation was most difficult for you to understand?**
 
-The difficult part for me was figuring out how Raycaster functions and how could I use the mouse to pick specific 3D objects. It was also important for me to know how various light settings would influence material appearance.
+The most challenging part was understanding how Raycaster works and how mouse input can be used to select specific 3D objects. I also had to understand how different lighting settings affect the appearance of materials and the overall look of the vehicle.
 
 **3. How would you explain the use of Raycaster in this project?**
 
-Raycaster helps identify the 3D object that the mouse is pointing at. The Raycaster in NEON VOLT allows the user to position the mouse cursor over the wheels, body, or battery parts of the car and it will show the information of the selected part.
+Raycaster sends an invisible ray from the camera through the mouse position and checks which 3D objects it intersects. In NEON VOLT, this makes it possible to point at and select parts such as the wheels, body, or battery components and display information about the selected part.
 
 **4. How would you explain the difference between a Color Map and a Normal Map?**
 
-The Color Map determines how the color and texture of the object will look like. Normal Map modifies the behavior of light on the surface of the object which makes it look like it has a lot of detail.
+A Color Map provides the surface's color and visible texture pattern. A Normal Map changes how light interacts with the surface, creating the appearance of small details without having to add extra geometry.
 
 **5. What would you improve if you continued developing NEON VOLT?**
 
-If I decide to further develop NEON VOLT, then I will make the car model more detailed, add more details to the interior, improve quality of reflections and materials, and add new interaction possibilities.
+I would make the car model more detailed, develop the interior, improve the quality of reflections and materials, and add more interaction possibilities.
 
 ---
 
