@@ -154,7 +154,7 @@ The Color Map determines how the color and texture of the object will look like.
 
 **5. What would you improve if you continued developing NEON VOLT?**
 
-If I decide to further develop NEON VOLT, then I will make the car model more detailed, add more details to the interior, improve quality of reflections and materials, and add new interaction possibilities.]
+If I decide to further develop NEON VOLT, then I will make the car model more detailed, add more details to the interior, improve quality of reflections and materials, and add new interaction possibilities.
 
 ---
 
