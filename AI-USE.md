@@ -1,10 +1,10 @@
-# AI Use Log – NEON VOLT
+﻿# AI Use Log â€“ NEON VOLT
 
 This document records the use of AI assistance during the development of the NEON VOLT Computer Graphics final project.
 
 The purpose of this log is to transparently document AI tools, their contributions, verification activities, changes made, and learning outcomes.
 
-## Entry 001 – Initial Project Scaffold
+## Entry 001 â€“ Initial Project Scaffold
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Assistance with the initial Vite + Three.js project structure, procedural electric-car concept, showroom layout, and initial implementation of the seven required Computer Graphics techniques.
@@ -12,7 +12,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made or rejected:** A procedural concept vehicle was used instead of an externally downloaded model to avoid uncertain asset licensing and additional asset dependencies.
 - **Learning outcome:** Understanding how a Three.js project separates geometry, materials, lighting, animation, shaders, and interaction.
 
-## Entry 002 – Fix Vite CSS Path and Platform Assembly
+## Entry 002 â€“ Fix Vite CSS Path and Platform Assembly
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Resolve a Vite import-analysis error involving the stylesheet path and correct the vehicle's relationship with the rotating display platform.
@@ -20,7 +20,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Moved the stylesheet to `src/style.css`, parented the vehicle to the rotating platform, and adjusted its vertical position.
 - **Learning outcome:** Understanding relative module imports and how parent-child relationships in Three.js affect object transformations.
 
-## Entry 003 – Refine the NV-01 Vehicle Model and Picking
+## Entry 003 â€“ Refine the NV-01 Vehicle Model and Picking
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Improve the procedural vehicle geometry and component selection.
@@ -28,7 +28,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made or rejected:** Replaced the box-dominated vehicle silhouette with a custom cross-section body mesh and added wheel spokes, brake discs, headlamps, mirrors, aerodynamic details, door seams, and a charging-port detail. Kept the vehicle procedural instead of using an external model with uncertain licensing.
 - **Learning outcome:** Understanding custom BufferGeometry construction, mesh composition, and Raycaster selection metadata.
 
-## Entry 004 – Improve Paint, Wheels, and Studio Lighting
+## Entry 004 â€“ Improve Paint, Wheels, and Studio Lighting
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Improve the appearance of automotive paint, wheel details, and showroom lighting.
@@ -36,7 +36,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added a subtle procedural tangent-space normal map to the body paint, brake calipers, wheel fasteners, and additional showroom fill lighting.
 - **Learning outcome:** Understanding how normal maps affect lighting without changing geometry and how fill lighting reveals object shape.
 
-## Entry 005 – Add EV Underfloor Components and Refine Animation
+## Entry 005 â€“ Add EV Underfloor Components and Refine Animation
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Add electric-vehicle details and improve animation control.
@@ -44,23 +44,23 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added a visual battery enclosure and cooling plate, hood lines, door handles, and side air outlets. Refactored animation so the display platform can pause independently of the shader ring and accent lighting.
 - **Learning outcome:** Understanding independent animation channels and the visual representation of an EV battery layout.
 
-## Entry 006 – Add Guided Camera Views
+## Entry 006 â€“ Add Guided Camera Views
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Add predefined camera views and keyboard shortcuts.
 - **What was checked:** Camera positions, OrbitControls target, button states, JavaScript syntax, and local imports.
-- **Changes made:** Added Hero, Front, Side, and Top camera presets with eased transitions and keyboard shortcuts 1–4.
+- **Changes made:** Added Hero, Front, Side, and Top camera presets with eased transitions and keyboard shortcuts 1â€“4.
 - **Learning outcome:** Understanding the relationship between camera position and OrbitControls target.
 
-## Entry 007 – Lighting, Interaction, and Defense Readiness
+## Entry 007 â€“ Lighting, Interaction, and Defense Readiness
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Review the implementation against the assignment rubric, improve interaction edge cases, and prepare a defense guide.
 - **What was checked:** Camera presets, Raycaster interaction, delta-time animation, lighting, materials, shaders, and README technique mapping.
-- **Changes made:** Improved lighting-mode animation, keyboard shortcut handling, Escape selection clearing, manual camera interaction, and resize handling. Added `docs/ODBRANA_MK.md`.
+- **Changes made:** Improved lighting-mode animation, keyboard shortcut handling, Escape selection clearing, manual camera interaction, and resize handling. Prepared supporting technical presentation materials.
 - **Learning outcome:** Understanding the importance of consistent animation states, keyboard interaction, and technical presentation.
 
-## Entry 008 – Raycaster Interaction and Technical Audit
+## Entry 008 â€“ Raycaster Interaction and Technical Audit
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Improve component selection and prepare a requirement-by-requirement technical audit.
@@ -68,7 +68,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Improved Escape behavior, hover clearing, tooltip and cursor reset, and click-versus-drag detection. Added `docs/TECHNICAL_AUDIT_MK.md`.
 - **Learning outcome:** Understanding how Raycaster intersections are ordered and why drag gestures must be distinguished from clicks.
 
-## Entry 009 – Accessibility and WebGL Resilience
+## Entry 009 â€“ Accessibility and WebGL Resilience
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Improve accessibility and provide feedback when WebGL is unavailable or lost.
@@ -76,7 +76,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added `prefers-reduced-motion` support, WebGL error messages, context-loss feedback, and resize observer cleanup.
 - **Learning outcome:** Understanding graceful error handling and accessibility considerations in 3D web applications.
 
-## Entry 010 – Improve Color and Normal Texture Implementation
+## Entry 010 â€“ Improve Color and Normal Texture Implementation
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Strengthen the implementation of the required texture techniques.
@@ -84,7 +84,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added a procedural body Color Map with a subtle metallic-flake pattern and a generated floor Normal Map.
 - **Learning outcome:** Understanding the difference between color textures and normal textures and why they use different color-space handling.
 
-## Entry 011 – Performance and Accessibility Improvements
+## Entry 011 â€“ Performance and Accessibility Improvements
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Reduce unnecessary rendering and improve keyboard accessibility.
@@ -92,7 +92,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added a pixel-ratio limit, pause/resume behavior when switching browser tabs, `aria-pressed` attributes, and visible keyboard focus styles.
 - **Learning outcome:** Understanding rendering performance and accessible interface controls.
 
-## Entry 012 – Automated Static Project Verification
+## Entry 012 â€“ Automated Static Project Verification
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Create a repeatable verification script for required files, local imports, and source-level evidence of the seven techniques.
@@ -100,7 +100,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Added `scripts/verify-project.mjs` and the `npm run verify` command.
 - **Learning outcome:** Understanding the difference between static source verification, production builds, and browser testing.
 
-## Entry 013 – README and Project Documentation
+## Entry 013 â€“ README and Project Documentation
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Improve the GitHub README and organize the project documentation.
@@ -108,7 +108,7 @@ The purpose of this log is to transparently document AI tools, their contributio
 - **Changes made:** Prepared a structured README covering the project overview, installation, technologies, controls, graphics techniques, project structure, and limitations.
 - **Learning outcome:** Understanding how technical documentation helps explain and maintain a software project.
 
-## Entry 014 – Git and GitHub Setup
+## Entry 014 â€“ Git and GitHub Setup
 
 - **AI tool:** ChatGPT.
 - **Purpose:** Provide guidance for creating a Git repository and publishing the project on GitHub.
@@ -131,7 +131,7 @@ The following checks were performed by the student during local testing:
 - [x] Focus Vehicle and Escape controls were tested.
 - [x] Shadows and reflections were visually checked.
 - [x] Browser window resizing was tested.
-- [x] Application stability was checked during a 2–3 minute session.
+- [x] Application stability was checked during a 2â€“3 minute session.
 
 
 ### Personal Reflection
