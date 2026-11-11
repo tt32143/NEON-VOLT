@@ -9,8 +9,10 @@ const requiredFiles = [
   'src/materials.js', 'src/lighting.js', 'src/showroom.js',
   'src/interaction.js', 'src/animation.js',
   'src/shaders/showroom.vert', 'src/shaders/showroom.frag',
-  'docs/ODBRANA_MK.md', 'docs/TECHNICAL_AUDIT_MK.md',
-  'docs/FINAL_TEST_CHECKLIST_MK.md', 'AI-USE.md', 'README.md'
+  'docs/TECHNICAL_AUDIT_MK.md',
+  'docs/FINAL_TEST_CHECKLIST_MK.md',
+  'docs/USER_ACCEPTANCE_TEST_MK.md',
+  'AI-USE.md', 'README.md'
 ];
 
 for (const relative of requiredFiles) {

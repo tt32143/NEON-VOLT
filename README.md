@@ -196,7 +196,6 @@ Implemented in `src/interaction.js`.
 NEON-VOLT/
 ├── docs/
 │   ├── FINAL_TEST_CHECKLIST_MK.md
-│   ├── ODBRANA_MK.md
 │   ├── TECHNICAL_AUDIT_MK.md
 │   └── USER_ACCEPTANCE_TEST_MK.md
 ├── scripts/
@@ -224,7 +223,6 @@ NEON-VOLT/
 
 Additional project documentation is available in the `docs/` directory:
 
-- `ODBRANA_MK.md` – Five-minute defense guide and technical questions.
 - `TECHNICAL_AUDIT_MK.md` – Implementation audit against the seven course requirements.
 - `FINAL_TEST_CHECKLIST_MK.md` – Final testing checklist.
 - `USER_ACCEPTANCE_TEST_MK.md` – Manual browser testing record.
